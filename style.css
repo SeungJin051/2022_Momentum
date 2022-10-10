@@ -1,0 +1,11 @@
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  display: block;
+}
