@@ -12,15 +12,22 @@ loginForm.addEventListener("submit", function onLoiginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username);
   greeting.innerHTML = `안녕하세요 ${username}님`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  document.querySelector("#log-out").classList.remove(HIDDEN_CLASSNAME);
 });
 
-const localStorageItem = localStorage.getItem(USERNAME_KEY);
+const getLocalStorageItem = localStorage.getItem(USERNAME_KEY);
 
-if (localStorageItem === null) {
+if (getLocalStorageItem === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoiginSubmit());
 } else {
-  greeting.innerHTML = `안녕하세요 ${localStorageItem}님`;
+  greeting.innerHTML = `안녕하세요 ${getLocalStorageItem}님`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   loginForm.classList.add(HIDDEN_CLASSNAME);
+  document.querySelector("#log-out").classList.remove(HIDDEN_CLASSNAME);
 }
+
+document.querySelector("#log-out").addEventListener("click", function () {
+  localStorage.clear();
+  window.location.reload();
+});
