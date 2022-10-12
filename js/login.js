@@ -10,7 +10,7 @@ loginForm.addEventListener("submit", function onLoiginSubmit(event) {
   loginForm.classList.add(HIDDEN_CLASSNAME);
   const username = loginInput.value;
   localStorage.setItem(USERNAME_KEY, username);
-  greeting.innerHTML = `안녕하세요 ${username}님`;
+  greeting.innerHTML = `안녕하세요 ${username}.`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   document.querySelector("#log-out").classList.remove(HIDDEN_CLASSNAME);
 });
@@ -21,7 +21,7 @@ if (getLocalStorageItem === null) {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", onLoiginSubmit());
 } else {
-  greeting.innerHTML = `안녕하세요 ${getLocalStorageItem}님`;
+  greeting.innerHTML = `안녕하세요 ${getLocalStorageItem}.`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
   loginForm.classList.add(HIDDEN_CLASSNAME);
   document.querySelector("#log-out").classList.remove(HIDDEN_CLASSNAME);
