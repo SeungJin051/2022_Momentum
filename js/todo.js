@@ -2,15 +2,18 @@ const toDoForm = document.getElementById("todo-form");
 const toDoList = document.getElementById("todo-list");
 const toDoInput = toDoForm.querySelector("input");
 
-function printToDo(newTodo) {
-  console.log("i will print ToDo", newTodo);
+function printToDo(createToDo) {
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  li.appendChild(span);
+  span.innerHTML = createToDo;
+  toDoList.appendChild(li);
 }
 
-function handleToDoSubmit(event) {
-  event.preventDefault();
-  const createTodo = toDoInput.value; // input의 현 value를 변수에 복사.
+function handleToDoSubmit() {
+  const createToDo = toDoInput.value; // input의 현재 value를 새로운 변수에 복사
   toDoInput.value = ""; // 초기화
-  printToDo(newTodo);
+  printToDo(createToDo); // newTodo(파라미터)값을 printToDo 함수로 보냄
 }
 
-toDoForm.addEventListener("submit", printToDo);
+toDoForm.addEventListener("submit", handleToDoSubmit);
