@@ -10,3 +10,8 @@
 .show {
   display: block;
 }
+
+input,
+button {
+  cursor: pointer;
+}
