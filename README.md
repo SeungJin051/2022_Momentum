@@ -10,7 +10,7 @@
 // document.getElementById(""); = id로 바로 접근가능
 // .addEventListener("click", 함수); = element에 해당 event를 했을때 어떤 함수를 실행 할지를 정해줘야함, 실행버튼 () = X
 
-# 왜 json.stringify 함수를 쓰나 나중에 json.parse 함수를 쓰더라구요
+# 왜 json.stringify 함수를 쓰나
 
 (STRINGIFY = 변수 등을 문자열로 바꿈,PARSE = 문자열을 JSON으로 바꿈)
 ocalstorage 에서는 문자열밖에 저장할 수 있기 때문에
