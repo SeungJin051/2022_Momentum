@@ -3,6 +3,7 @@ const loginForm = document.querySelector("#login-form");
 const greeting = document.querySelector("#greeting");
 const todoSubmit = document.querySelector("#todo-form");
 const printQuote = document.querySelector("#quote");
+const greetingText = document.querySelector(".todo-mate");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
@@ -17,6 +18,7 @@ loginForm.addEventListener("submit", function onLoiginSubmit(event) {
   document.querySelector("#log-out").classList.remove(HIDDEN_CLASSNAME);
   todoSubmit.classList.remove(HIDDEN_CLASSNAME);
   printQuote.classList.remove(HIDDEN_CLASSNAME);
+  greetingText.classList.remove(HIDDEN_CLASSNAME);
 });
 
 const getLocalStorageItem = localStorage.getItem(USERNAME_KEY);
@@ -31,6 +33,7 @@ if (getLocalStorageItem === null) {
   document.querySelector("#log-out").classList.remove(HIDDEN_CLASSNAME);
   todoSubmit.classList.remove(HIDDEN_CLASSNAME);
   printQuote.classList.remove(HIDDEN_CLASSNAME);
+  greetingText.classList.remove(HIDDEN_CLASSNAME);
 }
 
 document.querySelector("#log-out").addEventListener("click", function () {
