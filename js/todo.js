@@ -1,6 +1,6 @@
 const toDoForm = document.getElementById("todo-form");
+const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
-const toDoInput = toDoForm.querySelector("input");
 const TODOS_KEY = "todos";
 
 let toDos = []; // save toDos
@@ -21,9 +21,9 @@ function printToDo(createToDo) {
   const li = document.createElement("li");
   li.id = createToDo.id; // li에 객체의 속성값을 전달
   const span = document.createElement("span");
+  span.innerHTML = createToDo.text; // span에 객체의 속성값을 전달
   const button = document.createElement("button");
 
-  span.innerHTML = createToDo.text; // span에 객체의 속성값을 전달
   button.innerHTML = "❌";
   button.addEventListener("click", deleteToDo);
   li.appendChild(span);
@@ -53,7 +53,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem("TODOS_KEY");
 
-if (saveToDos !== null) {
+if (savedToDos !== null) {
   const parseToDos = JSON.parse(savedToDos);
   toDos = parseToDos;
   parseToDos.forEach(printToDo); // todos는 항상 빈 array로 시작하여서 이전의 todo가 사라짐, let array를 parse해준다. // ex) printToDo({text: 'a', id: 1235346})
