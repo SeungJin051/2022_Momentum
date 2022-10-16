@@ -13,6 +13,8 @@ function saveToDos() {
 function deleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  saveToDos();
 }
 
 function printToDo(createToDo) {
@@ -53,5 +55,6 @@ const savedToDos = localStorage.getItem("TODOS_KEY");
 
 if (saveToDos !== null) {
   const parseToDos = JSON.parse(savedToDos);
+  toDos = parseToDos;
   parseToDos.forEach(printToDo); // todos는 항상 빈 array로 시작하여서 이전의 todo가 사라짐, let array를 parse해준다. // ex) printToDo({text: 'a', id: 1235346})
 }
