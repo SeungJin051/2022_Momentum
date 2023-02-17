@@ -1,5 +1,10 @@
 # 2022_Momentum
 
+
+<img width="1358" alt="스크린샷 2023-02-17 오후 4 37 08" src="https://user-images.githubusercontent.com/83889135/219580450-df9f5d08-9fa9-4960-bfbb-5a86814fb343.png">
+
+
+
 ("use strict"); // Whole-scripte strict mode syntax
 // JavaScript is very flexible
 // flexible === dangerous
